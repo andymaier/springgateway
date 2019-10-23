@@ -16,6 +16,7 @@ public class GatewayApplication {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
 
+	//Necessary to cover all routes from service discovery
 	@Bean
 	public DiscoveryClientRouteDefinitionLocator discoveryClientRouteLocator(DiscoveryClient discoveryClient, DiscoveryLocatorProperties props) {		
 		return new DiscoveryClientRouteDefinitionLocator(discoveryClient, props);
