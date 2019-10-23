@@ -1,5 +1,5 @@
 server:
-    port: 8889
+    port: 8888
 
 spring:
   application:
@@ -10,17 +10,13 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-      routes:
-      - id: stock
-        uri: lb://stock
-        predicates: 
-        - Path=/stock/**
-        filters:
-        - RewritePath=/stock/(?<path>.*), /$\{path}
-          
-#spring.cloud.gateway.routes[0].id=users
-#spring.cloud.gateway.routes[0].uri=lb://PHOTOAPPAPI-USERS/users
-#spring.cloud.gateway.routes[0].predicates[0]=Path=/users/**
+      #routes:
+      #- id: stock
+      #  uri: lb://stock
+      #  predicates: 
+      #  - Path=/stock/**
+      #  filters:
+      #  - RewritePath=/stock/(?<path>.*), /$\{path}
 
 eureka:
   client:
