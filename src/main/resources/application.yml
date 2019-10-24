@@ -10,6 +10,7 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+      #Route Matching based on Path
       #routes:
       #- id: stock
       #  uri: lb://stock
@@ -17,6 +18,16 @@ spring:
       #  - Path=/stock/**
       #  filters:
       #  - RewritePath=/stock/(?<path>.*), /$\{path}
+
+      # Add request Header with filters
+      #routes:
+      #- id: addrequestheader_route
+      #  uri: lb://stock
+      #  predicates:
+      #  - Path=/stock/stocks/port
+      #  filters:
+      #  - RewritePath=/stock/(?<path>.*), /$\{path}
+      #  - AddRequestHeader=X-SomeHeader, shop
 
 eureka:
   client:
